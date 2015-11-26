@@ -31,7 +31,7 @@ option (WITH_THREADS "Enable multithreading support" ON)
 
 list (APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
-include (CMakePackageConfigHelpers)
+#include (CMakePackageConfigHelpers)
 include (CPack)
 include (CheckCSourceCompiles)
 include (CheckCXXCompilerFlag)
@@ -385,9 +385,9 @@ if (WIN32 AND HAVE_SNPRINTF)
     HAVE_SNPRINTF)
 endif (WIN32 AND HAVE_SNPRINTF)
 
-if (HAVE_NO_UNNAMED_TYPE_TEMPLATE_ARGS)
-  target_compile_options (glog PUBLIC -Wno-unnamed-type-template-args)
-endif (HAVE_NO_UNNAMED_TYPE_TEMPLATE_ARGS)
+# if (HAVE_NO_UNNAMED_TYPE_TEMPLATE_ARGS)
+  # target_compile_options (glog PUBLIC -Wno-unnamed-type-template-args)
+# endif (HAVE_NO_UNNAMED_TYPE_TEMPLATE_ARGS)
 
 if (gflags_FOUND)
   target_include_directories (glog PUBLIC ${gflags_INCLUDE_DIR})
