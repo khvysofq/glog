@@ -565,23 +565,23 @@ find_dependency (gflags ${gflags_VERSION})
 ")
 endif (gflags_FOUND)
 
-configure_package_config_file (glog-config.cmake.in
-  ${CMAKE_CURRENT_BINARY_DIR}/glog-config.cmake INSTALL_DESTINATION
-  lib/cmake/glog PATH_VARS glog_INCLUDE_DIR
-  NO_CHECK_REQUIRED_COMPONENTS_MACRO)
+# configure_package_config_file (glog-config.cmake.in
+  # ${CMAKE_CURRENT_BINARY_DIR}/glog-config.cmake INSTALL_DESTINATION
+  # lib/cmake/glog PATH_VARS glog_INCLUDE_DIR
+  # NO_CHECK_REQUIRED_COMPONENTS_MACRO)
 
 # The version file is the same both for build tree and install mode config
-write_basic_package_version_file (glog-config-version.cmake VERSION
-  ${GLOG_VERSION} COMPATIBILITY SameMajorVersion)
+# write_basic_package_version_file (glog-config-version.cmake VERSION
+  # ${GLOG_VERSION} COMPATIBILITY SameMajorVersion)
 
 # Install config
 
 set (glog_INCLUDE_DIR include)
 
-configure_package_config_file (glog-config.cmake.in
-  ${CMAKE_CURRENT_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/glog-config.cmake
-  INSTALL_DESTINATION lib/cmake/glog PATH_VARS glog_INCLUDE_DIR
-  NO_CHECK_REQUIRED_COMPONENTS_MACRO)
+# configure_package_config_file (glog-config.cmake.in
+  # ${CMAKE_CURRENT_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/glog-config.cmake
+  # INSTALL_DESTINATION lib/cmake/glog PATH_VARS glog_INCLUDE_DIR
+  # NO_CHECK_REQUIRED_COMPONENTS_MACRO)
 
 export (TARGETS glog FILE glog-targets.cmake)
 export (PACKAGE glog)
